@@ -13,6 +13,10 @@ struct Member {
     let lastName: String
     let membershipType: String
     let joinDate: String
+    let carReg: String
+    let memberphoto: String
+    let vistsThisweek: Int
+
 }
 
 struct ForgeGymData {
@@ -20,5 +24,6 @@ struct ForgeGymData {
     let songplaying: String
     let bandplaying: String
     let albumImage: String
+    
 }
 

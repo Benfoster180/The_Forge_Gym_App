@@ -11,7 +11,7 @@ import SwiftUI
 struct The_Forge_Gym_AppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ForgeNavBar()
         }
     }
 }

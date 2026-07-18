@@ -18,12 +18,12 @@ struct ForgeParkingScan: View {
                         .stroke(Color.white.opacity(0.15), lineWidth: 1)
                     
                     VStack {
-                        Image(systemName: "figure.cooldown")
+                        Image(systemName: "parkingsign.square.fill")
                             .foregroundColor(Color("ForgeYellow"))
                             .font(.system(size: 35))
                             .padding()
                         
-                        Text("Book A Class!")
+                        Text("Parking!")
                             .foregroundColor(Color("ForgeYellow"))
                             .font(.system(size: 16, weight: .bold))
                             .tracking(1)

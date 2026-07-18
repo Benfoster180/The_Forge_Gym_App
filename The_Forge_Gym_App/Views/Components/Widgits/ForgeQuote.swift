@@ -7,14 +7,15 @@
 
 import SwiftUI
 
-struct ForgeSectionTitle: View {
+struct ForgeQuote: View {
     var body: some View {
         VStack(spacing: 0) {
 
-            Text("SECTION TITLE PLACEHOLDER")
+            Text("A champion is someone who gets up when they can’t. - Jack Dempsey")
                 .font(.system(size: 14, weight: .bold))
                 .tracking(2)
                 .foregroundColor(.white)
+                .multilineTextAlignment(.center)
 
         }
         .frame(maxWidth: .infinity)
@@ -32,6 +33,6 @@ struct ForgeSectionTitle: View {
         Color("ForgeBlack")
             .ignoresSafeArea()
 
-        ForgeSectionTitle()
+        ForgeQuote()
     }
 }
