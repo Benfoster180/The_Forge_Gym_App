@@ -15,29 +15,19 @@ struct ForgeAccessCode: View {
                 .ignoresSafeArea()
             VStack{
                 Forgeheader()
-                
-                
                 Spacer()
-                VStack(spacing: 20) {
-
-                    Spacer()
-                    Text("Welcome \(member.firstName)")
-                        .font(.title2)
-                        .fontWeight(.semibold)
-                        .foregroundStyle(.white)
-
+                VStack{
+                    Text("Welcome Back \(member.firstName)")
                     QRCodeView()
-
-                    Spacer()
+                    Text("Scan Code To Enter The Gym")
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+                .font(.system(size: 14, weight: .bold))
+                .foregroundStyle(Color("ForgeYellow"))
                 Spacer()
 
-                
-                    
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-                    }
+        }
         
     }
 }

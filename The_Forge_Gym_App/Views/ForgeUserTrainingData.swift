@@ -6,35 +6,57 @@
 //
 
 import SwiftUI
-import PassKit
 
-struct ForgeUserTrainingData: View {
-    
+struct ForgeTrainingData: View {
+    @Environment(\.dismiss) var dismiss
+    let member: Member
     var body: some View {
-        ZStack {
-            
+        ZStack{
             Color("ForgeBlack")
                 .ignoresSafeArea()
-            
-            
-            VStack(spacing: 20) {
+            VStack{
+                ZStack {
+                    Forgeheader()
+
+                    HStack {
+                        Button {
+                            dismiss()
+                        } label: {
+                            Image(systemName: "arrow.backward")
+                                .foregroundColor(Color("ForgeYellow"))
+                        }
+                        .padding(.leading, 20)
+
+                        Spacer()
+                    }
+                }
                 
-                Text("Data on user training capcity")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                
-                Text("Look at how the main app looks we will add a pop up when you click on streak which will show a similar things but like avarge session train time sessions this month etc")
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(.white)
                 Spacer()
+                
+                ScrollView{
+                    VStack
+                    {
+                        HStack{
+                            AvgTimeInGym(member: MockUserData.member)
+                                .frame(maxWidth: .infinity)
+                            LifeTimeVists(member: MockUserData.member)
+                                .frame(maxWidth: .infinity)
+                            
+                        }  .frame(height: 150)
+                    }
+                }
+                
+  
+                Spacer()
+                    
+
             }
-            .padding()
-        }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+                    }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
-
 #Preview {
-    ForgeUserTrainingData()
+    ForgeTrainingData(member: MockUserData.member)
 }

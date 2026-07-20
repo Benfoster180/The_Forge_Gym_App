@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Member {
-    let id: String
+struct Member: Identifiable {
+    let id = UUID()
     let firstName: String
     let lastName: String
     let membershipType: String
@@ -16,7 +16,8 @@ struct Member {
     let carReg: String
     let memberphoto: String
     let vistsThisweek: Int
-
+    let AvgtrainingTime: Int
+    let LifeTimeVists: Int
 }
 
 struct ForgeGymData {
@@ -27,3 +28,15 @@ struct ForgeGymData {
     
 }
 
+struct SpotifyData: Identifiable {
+    let id = UUID()
+    let song_name: String
+    let band_name: String
+    let album: String
+}
+
+struct FootTrafficData: Identifiable {
+    let id = UUID()
+    let day: String
+    let hourlyTraffic: [Int]
+}

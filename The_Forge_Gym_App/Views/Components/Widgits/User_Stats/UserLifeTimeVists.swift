@@ -1,15 +1,15 @@
 //
-//  Forgecapacity.swift
+//  UserAvgTimeInGym.swift
 //  The_Forge_Gym_App
 //
-//  Created by Ben Foster on 17/07/2026.
+//  Created by Ben Foster on 20/07/2026.
 //
 
 import SwiftUI
 
-struct ForgeCapacity: View {
+struct LifeTimeVists: View {
     
-    let forgeData: ForgeGymData
+    let member: Member
         
     
     var body: some View {
@@ -24,11 +24,11 @@ struct ForgeCapacity: View {
 
             VStack(spacing: 4) {
 
-                Text("\(forgeData.members_in_gym)")
+                Text("\(member.LifeTimeVists)")
                     .font(.system(size: 40, weight: .bold))
                     .foregroundColor(Color("ForgeYellow"))
 
-                Text("MEMBERS\nIN THE GYM")
+                Text("Lifetime\nVists!")
                     .font(.system(size: 10, weight: .semibold))
                     .tracking(1)
                     .multilineTextAlignment(.center)
@@ -40,5 +40,5 @@ struct ForgeCapacity: View {
 }
 
 #Preview {
-    ForgeCapacity(forgeData: MockGymData.forgeData)
+    LifeTimeVists(member: MockUserData.member)
 }

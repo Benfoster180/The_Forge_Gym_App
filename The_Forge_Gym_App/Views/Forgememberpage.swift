@@ -36,7 +36,7 @@ struct ForgeMemberPage: View {
                         HStack{
                             Text(member.lastName)
                             Spacer()
-                            Text("Membership Type: \(member.membershipType)")
+                            Text("\(member.membershipType) Member")
                                 .font(.caption)
                                 .foregroundStyle(.gray)
                         }

@@ -9,6 +9,7 @@ import SwiftUI
 struct ForgeHome: View {
     let forgeData: ForgeGymData
     @State private var showingParkingScan = false
+    @State private var showingcapcityview = false
     var body: some View {
         ZStack{
             Color("ForgeBlack")
@@ -23,8 +24,13 @@ struct ForgeHome: View {
                             HStack {
                                 
                                 HStack{
-                                    ForgeCapacity(forgeData: forgeData)
-                                        .frame(maxWidth: .infinity)
+                                    Button{
+                                        showingcapcityview = true
+                                    } label: {
+                                        ForgeCapacity(forgeData: forgeData)
+                                            .frame(maxWidth: .infinity)
+                                    }
+  
                                     
                                     Button{
                                         showingParkingScan = true
@@ -40,7 +46,13 @@ struct ForgeHome: View {
     
                             ForgeQuote()
                                 .frame(maxWidth: .infinity)
-                            ForgeStreak(member: MockUserData.member)
+                            
+                            NavigationLink{
+                                ForgeTrainingData(member: MockUserData.member)
+                            }label: {
+                                ForgeStreak(member: MockUserData.member)
+                            }
+                            
                         }
                         
                         HStack{
@@ -59,8 +71,16 @@ struct ForgeHome: View {
                                     .frame(maxWidth: .infinity)
                             }
                         }
-                        ForgeCurrentSong(forgeData: forgeData)
-                            .frame(maxWidth: .infinity)
+                        
+                        NavigationLink{
+                            ForgeMusicSystem(
+                                   forgeData: MockGymData.forgeData,
+                                   spotifyData: MockSpotifyData.spotifyData
+                               )
+                        }label: {
+                            ForgeCurrentSong(forgeData: forgeData)
+                                .frame(maxWidth: .infinity)
+                        }
                         
                     
                         
@@ -75,8 +95,18 @@ struct ForgeHome: View {
         .sheet(isPresented: $showingParkingScan) {
             ForgeParkingScanView()
                 .presentationDetents([.medium])
+            
         }
         
+        .sheet(isPresented: $showingcapcityview) {
+            Forgecapcityview(
+                forgeData: MockGymData.forgeData,
+                weeklyTraffic: MockFootTrafficData.weeklyTraffic
+            )
+                .presentationDetents([.medium])
+            
+        }
+
     }
 }
 

@@ -15,12 +15,27 @@
 import SwiftUI
 
 struct ForgeDealsPage: View {
+    @Environment(\.dismiss) var dismiss
     var body: some View {
         ZStack{
             Color("ForgeBlack")
                 .ignoresSafeArea()
             VStack{
-                Forgeheader()
+                ZStack {
+                    Forgeheader()
+
+                    HStack {
+                        Button {
+                            dismiss()
+                        } label: {
+                            Image(systemName: "arrow.backward")
+                                .foregroundColor(Color("ForgeYellow"))
+                        }
+                        .padding(.leading, 20)
+
+                        Spacer()
+                    }
+                }
                 
                 Spacer()
                 
