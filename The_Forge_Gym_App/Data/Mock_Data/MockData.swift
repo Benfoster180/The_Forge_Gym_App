@@ -18,7 +18,9 @@ struct MockUserData {
         memberphoto: "memberphoto",
         vistsThisweek: 3,
         AvgtrainingTime: 35,
-        LifeTimeVists: 125
+        LifeTimeVists: 125,
+        Memberranking: 10,
+        num_of_classes_booked: "5"
 
     )
 
@@ -63,6 +65,25 @@ struct MockSpotifyData {
             band_name: "Pearl Jam",
             album: "ten"
         )
+    ]
+}
+
+struct MockClassData{
+    static let classdata: [ClassData] = [
+        
+        ClassData(
+            classname: "SPIN CLASS",
+            classdate: "21/07/2026",
+            classtime: "6:30pm", 
+            classimg: "spinclass"
+        ),
+        ClassData(
+            classname: "YOGA",
+            classdate: "25/07/2026",
+            classtime: "6:30pm",
+            classimg: "yoga"
+        )
+        
     ]
 }
 

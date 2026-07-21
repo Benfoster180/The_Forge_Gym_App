@@ -37,9 +37,11 @@ struct ForgeMusicSystem: View {
                 
             
                 
-                VStack(spacing: 5){
+                VStack(spacing: 0){
                     ForgeCurrentSong(forgeData: MockGymData.forgeData,)
+                    ForgeSongQueue()
                     ScrollView{
+                        
                         VStack(spacing: 3){
                             ForEach(spotifyData) { song in
                                 ForgeSongQueueItem(
@@ -50,6 +52,7 @@ struct ForgeMusicSystem: View {
                         }
                     }
                     SpotifyJamButton()
+                        .padding()
                     Spacer()
                     
 

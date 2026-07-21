@@ -43,6 +43,12 @@ struct ForgeTrainingData: View {
                                 .frame(maxWidth: .infinity)
                             
                         }  .frame(height: 150)
+                        
+                        UserRanking(member: MockUserData.member)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 150)
+                        
+
                     }
                 }
                 

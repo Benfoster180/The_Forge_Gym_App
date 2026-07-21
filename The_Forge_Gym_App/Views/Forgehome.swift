@@ -57,7 +57,10 @@ struct ForgeHome: View {
                         
                         HStack{
                             NavigationLink{
-                                ForgeClasses()
+                                ForgeClasses(
+                                    classdata: MockClassData.classdata,
+                                    member: MockUserData.member
+                                )
                              
                             }label: {
                                 ForgeClassesButton()

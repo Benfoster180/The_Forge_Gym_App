@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct ForgeAccessCode: View {
     let member: Member
     var body: some View {

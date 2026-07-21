@@ -18,6 +18,8 @@ struct Member: Identifiable {
     let vistsThisweek: Int
     let AvgtrainingTime: Int
     let LifeTimeVists: Int
+    let Memberranking: Int
+    let num_of_classes_booked: String
 }
 
 struct ForgeGymData {
@@ -39,4 +41,12 @@ struct FootTrafficData: Identifiable {
     let id = UUID()
     let day: String
     let hourlyTraffic: [Int]
+}
+
+struct  ClassData: Identifiable {
+    let id = UUID()
+    let classname: String
+    let classdate: String
+    let classtime: String
+    let classimg: String
 }
